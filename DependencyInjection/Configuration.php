@@ -19,7 +19,9 @@ class Configuration implements ConfigurationInterface
     {
         $tb = new TreeBuilder('iphp_file_store');
 
-        $tb
+        $rootNode = $tb->getRootNode();
+
+        $rootNode
             ->children()
                 ->scalarNode('db_driver')->defaultValue('orm')->end()
                 ->arrayNode('mappings')
