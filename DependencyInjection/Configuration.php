@@ -13,16 +13,13 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 class Configuration implements ConfigurationInterface
 {
     /**
-     * Gets the configuration tree builder for the extension.
-     *
-     * @return Tree The configuration tree builder
+     * {@inheritDoc}
      */
     public function getConfigTreeBuilder()
     {
-        $tb = new TreeBuilder();
-        $root = $tb->root('iphp_file_store');
+        $tb = new TreeBuilder('iphp_file_store');
 
-        $root
+        $tb
             ->children()
                 ->scalarNode('db_driver')->defaultValue('orm')->end()
 
