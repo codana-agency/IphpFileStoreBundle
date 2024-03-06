@@ -15,7 +15,7 @@ class FormPass implements CompilerPassInterface
     public function process(ContainerBuilder $container)
     {
         $resources = $container->getParameter('twig.form.resources');
-        $resources[] = 'IphpFileStoreBundle:Form:fields.html.twig';
+        $resources[] = '@IphpFileStoreBundle/Form/fields.html.twig';
 
 
         $container->setParameter('twig.form.resources', $resources);
